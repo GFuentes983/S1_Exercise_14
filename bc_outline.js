@@ -82,6 +82,12 @@ function createList(source, outlineList) {
             outlineList.lastChild.appendChild(nestedList);
          } else {
             // Append the entry to a higher list
+            var nestedList = document.createElement("ol");
+            nestedList.appendChild(listElem);
+            // Append the nested list to last item in the current list
+            outline.lastChild.appendChild(nestedList);
+            // Change the current list to the nested list
+            outlineList = nestedList;
          }
 
          // Update the value of prevLevel

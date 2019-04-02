@@ -53,12 +53,12 @@ function setupStyles() {
    document.head.appendChild(buttonSyles);
 
    // Add stiles rules to the embedded style sheet
-   doucment.styleSheets[doucment.styleSheets.length-1].insertRule(
+   document.styleSheets[document.styleSheets.length-1].insertRule(
       "div#styleButtons {  \
          position: fixed; \
       }", 0);
 
-   doucment.styleSheets[doucment.styleSheets.length-1].insertRule(
+   document.styleSheets[document.styleSheets.length-1].insertRule(
       "div#styleButtons input {  \
          background-color: rgba(68, 94, 186, 0.6); \
          border: 3px solid rgba(0, 24, 123, 0.6); \
@@ -72,7 +72,7 @@ function setupStyles() {
          width: 100px; \
       }", 1);
 
-   doucment.styleSheets[doucment.styleSheets.length-1].insertRule(
+   document.styleSheets[document.styleSheets.length-1].insertRule(
       "@media print { \
             div#styleButtons { \
                display: none; \
@@ -80,12 +80,14 @@ function setupStyles() {
          }", 2);
 
    // Turn the page view style off and on 
-   webButton.onlick = function() {
+   webButton.onclick = function() {
       pageStyle.disabled = true;
+      console.log('1');
    }
 
    pageButton.onclick = function() {
       // body...
       pageStyle.disabled = false;
+      console.log('2');
    }
 }
